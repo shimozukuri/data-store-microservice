@@ -15,7 +15,7 @@ public class KeyHelper {
         return getPrefix() + ":" + key;
     }
 
-    public static String getPrefix() {
-        return Objects.requireNonNull(prefix, defaultPrefix);
+    private static String getPrefix() {
+        return Objects.requireNonNullElse(prefix, defaultPrefix);
     }
 }

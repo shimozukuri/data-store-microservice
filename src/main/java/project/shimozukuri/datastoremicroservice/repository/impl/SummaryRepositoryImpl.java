@@ -30,7 +30,7 @@ public class SummaryRepositoryImpl implements SummaryRepository {
                     RedisSchema.sensorKeys(),
                     String.valueOf(sensorId)
             )) {
-                Optional.empty();
+                return Optional.empty();
             }
 
             if (measurementTypes.isEmpty() && !summaryTypes.isEmpty()) {
