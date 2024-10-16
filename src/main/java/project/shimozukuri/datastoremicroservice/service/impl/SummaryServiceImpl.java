@@ -2,6 +2,7 @@ package project.shimozukuri.datastoremicroservice.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import project.shimozukuri.datastoremicroservice.model.Data;
 import project.shimozukuri.datastoremicroservice.model.MeasurementType;
 import project.shimozukuri.datastoremicroservice.model.Summary;
 import project.shimozukuri.datastoremicroservice.model.SummaryType;
@@ -29,5 +30,10 @@ public class SummaryServiceImpl implements SummaryService {
                         summaryTypes == null ? Set.of(SummaryType.values()) : summaryTypes
                 )
                 .orElseThrow(SensorNotFoundException::new);
+    }
+
+    @Override
+    public void handle(Data data) {
+        summaryRepository.handle(data);
     }
 }

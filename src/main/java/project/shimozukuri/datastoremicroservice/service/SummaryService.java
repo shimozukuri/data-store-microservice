@@ -1,5 +1,6 @@
 package project.shimozukuri.datastoremicroservice.service;
 
+import project.shimozukuri.datastoremicroservice.model.Data;
 import project.shimozukuri.datastoremicroservice.model.MeasurementType;
 import project.shimozukuri.datastoremicroservice.model.Summary;
 import project.shimozukuri.datastoremicroservice.model.SummaryType;
@@ -12,5 +13,9 @@ public interface SummaryService {
             long sensorId,
             Set<MeasurementType> measurementTypes,
             Set<SummaryType> summaryTypes
+    );
+
+    void handle(
+            Data data
     );
 }
